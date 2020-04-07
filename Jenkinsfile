@@ -40,6 +40,7 @@ pipeline {
             }
             steps {
                 input 'Deploy to Production?'
+                echo 'Running PROD Deployment'
                 milestone(1)
                 withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
                     script {
